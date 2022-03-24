@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -76,23 +76,23 @@
       <DependentUpon>CarsDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Controller\CarsController.cs" />
-    <Compile Include="Models\CarsDBEntities.Context.cs">
+    <Compile Include="Models\Car.cs">
+      <DependentUpon>CarDBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CarDBModels.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CarsDBEntities.Context.tt</DependentUpon>
+      <DependentUpon>CarDBModels.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CarsDBEntities.cs">
+    <Compile Include="Models\CarDBModels.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CarsDBEntities.tt</DependentUpon>
+      <DependentUpon>CarDBModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CarsDBEntities.Designer.cs">
+    <Compile Include="Models\CarDBModels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CarsDBEntities.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Table.cs">
-      <DependentUpon>CarsDBEntities.tt</DependentUpon>
+      <DependentUpon>CarDBModels.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,12 +126,12 @@
     <None Include="CarsDBDataSet.xss">
       <DependentUpon>CarsDBDataSet.xsd</DependentUpon>
     </None>
-    <EntityDeploy Include="Models\CarsDBEntities.edmx">
+    <EntityDeploy Include="Models\CarDBModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CarsDBEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>CarDBModels.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\CarsDBEntities.edmx.diagram">
-      <DependentUpon>CarsDBEntities.edmx</DependentUpon>
+    <None Include="Models\CarDBModels.edmx.diagram">
+      <DependentUpon>CarDBModels.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -159,15 +159,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CarsDB.mdf</DependentUpon>
     </Content>
-    <Content Include="Models\CarsDBEntities.Context.tt">
+    <Content Include="Models\CarDBModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CarsDBEntities.edmx</DependentUpon>
-      <LastGenOutput>CarsDBEntities.Context.cs</LastGenOutput>
+      <DependentUpon>CarDBModels.edmx</DependentUpon>
+      <LastGenOutput>CarDBModels.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\CarsDBEntities.tt">
+    <Content Include="Models\CarDBModels.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CarsDBEntities.edmx</DependentUpon>
-      <LastGenOutput>CarsDBEntities.cs</LastGenOutput>
+      <DependentUpon>CarDBModels.edmx</DependentUpon>
+      <LastGenOutput>CarDBModels.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

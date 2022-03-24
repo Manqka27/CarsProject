@@ -13,10 +13,10 @@ namespace CarsProject.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CarsDBEntities1 : DbContext
+    public partial class CarsDBEntities : DbContext
     {
-        public CarsDBEntities1()
-            : base("name=CarsDBEntities1")
+        public CarsDBEntities()
+            : base("name=CarsDBEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace CarsProject.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Table> Table { get; set; }
+        public virtual DbSet<Car> Cars { get; set; }
     }
 }

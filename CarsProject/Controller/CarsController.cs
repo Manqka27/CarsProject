@@ -15,6 +15,17 @@ namespace CarsProject.Controller
             {
                 return db.Cars.ToList();
             }
+
+        }
+
+        public void AddCar(Car g)
+        {
+            using (CarsDBEntities gdbe = new CarsDBEntities())
+            {
+                g.Id = gdbe.Cars.ToList().LastOrDefault().Id + 1;
+                gdbe.Cars.Add(g);
+                gdbe.SaveChanges();
+            }
         }
     }
 }

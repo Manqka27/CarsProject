@@ -5,44 +5,44 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="CarsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Table">
+        <EntityType Name="Cars">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Hp" Type="int" Nullable="false" />
           <Property Name="Price" Type="int" Nullable="false" />
           <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityContainer Name="CarsDBModelStoreContainer">
-          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cars" EntityType="Self.Cars" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CarsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Table">
+        <EntityType Name="Car">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Hp" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="Int32" Nullable="false" />
           <Property Name="Model" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="CarsDBEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Table" EntityType="Self.Table" />
+        <EntityContainer Name="CarsDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cars" EntityType="Self.Car" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CarsDBModelStoreContainer" CdmEntityContainer="CarsDBEntities1">
-          <EntitySetMapping Name="Table">
-            <EntityTypeMapping TypeName="CarsDBModel.Table">
-              <MappingFragment StoreEntitySet="Table">
+        <EntityContainerMapping StorageEntityContainer="CarsDBModelStoreContainer" CdmEntityContainer="CarsDBEntities">
+          <EntitySetMapping Name="Cars">
+            <EntityTypeMapping TypeName="CarsDBModel.Car">
+              <MappingFragment StoreEntitySet="Cars">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Hp" ColumnName="Hp" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
@@ -64,7 +64,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
