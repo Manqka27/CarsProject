@@ -27,5 +27,18 @@ namespace CarsProject.Controller
                 gdbe.SaveChanges();
             }
         }
+
+         public void DeleteCars(int id)           
+         {
+            using (CarsDBEntities gdbe = new CarsDBEntities())
+            {
+                var carsToDelete = gdbe.Cars.Where(g => g.Id == id).FirstOrDefault();
+                if (carsToDelete != null)
+                {
+                    gdbe.Cars.Remove(carsToDelete);
+                    gdbe.SaveChanges();
+                }
+            }
+         }
     }
 }

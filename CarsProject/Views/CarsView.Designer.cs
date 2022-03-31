@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvCars = new System.Windows.Forms.DataGridView();
-            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carsDBDataSet = new CarsProject.CarsDBDataSet();
-            this.tableTableAdapter = new CarsProject.CarsDBDataSetTableAdapters.TableTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.carsDBDataSet = new CarsProject.CarsDBDataSet();
+            this.tableTableAdapter = new CarsProject.CarsDBDataSetTableAdapters.TableTableAdapter();
             this.txtModel = new System.Windows.Forms.TextBox();
             this.lblCreate = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
@@ -44,6 +44,7 @@
             this.lblHP = new System.Windows.Forms.Label();
             this.txtHP = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCars)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsDBDataSet)).BeginInit();
@@ -64,20 +65,6 @@
             this.dgvCars.Size = new System.Drawing.Size(240, 150);
             this.dgvCars.TabIndex = 0;
             this.dgvCars.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCars_CellContentClick);
-            // 
-            // tableBindingSource
-            // 
-            this.tableBindingSource.DataMember = "Table";
-            this.tableBindingSource.DataSource = this.carsDBDataSet;
-            // 
-            // carsDBDataSet
-            // 
-            this.carsDBDataSet.DataSetName = "CarsDBDataSet";
-            this.carsDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tableTableAdapter
-            // 
-            this.tableTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -104,6 +91,20 @@
             this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
             this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
             this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            // 
+            // tableBindingSource
+            // 
+            this.tableBindingSource.DataMember = "Table";
+            this.tableBindingSource.DataSource = this.carsDBDataSet;
+            // 
+            // carsDBDataSet
+            // 
+            this.carsDBDataSet.DataSetName = "CarsDBDataSet";
+            this.carsDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableTableAdapter
+            // 
+            this.tableTableAdapter.ClearBeforeFill = true;
             // 
             // txtModel
             // 
@@ -167,6 +168,16 @@
             this.txtPrice.Size = new System.Drawing.Size(102, 29);
             this.txtPrice.TabIndex = 7;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(549, 161);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(119, 153);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // CarsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,6 +185,7 @@
             this.BackgroundImage = global::CarsProject.Properties.Resources._670380;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtHP);
             this.Controls.Add(this.lblHP);
@@ -210,5 +222,6 @@
         private System.Windows.Forms.Label lblHP;
         private System.Windows.Forms.TextBox txtHP;
         private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
