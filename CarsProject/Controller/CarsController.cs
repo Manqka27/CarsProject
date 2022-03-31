@@ -27,5 +27,22 @@ namespace CarsProject.Controller
                 gdbe.SaveChanges();
             }
         }
+        public void UpdateCars(int id, Car car)
+        {
+            using (CarsDBEntities gdbe = new CarsDBEntities())
+            {
+                var carToUpdate = gdbe.Cars.Where(g => g.Id == id).FirstOrDefault();
+                if (carToUpdate != null)
+                {
+                    carToUpdate.Id = id;
+                    carToUpdate.Model = car.Model;
+                    carToUpdate.Price = car.Price;
+                    carToUpdate.Hp = car.Hp;
+                    gdbe.SaveChanges();
+                }
+            }
+        }
+        
+
     }
 }

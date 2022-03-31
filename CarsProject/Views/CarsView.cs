@@ -50,5 +50,17 @@ namespace CarsProject.Views
             carsController.AddCar(car);
             RefreshTable();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgvCars.CurrentRow;
+            int id = int.Parse(row.Cells[0].Value.ToString());
+            Car car = new Car();
+            car.Model = txtModel.Text;
+            car.Price = int.Parse(txtPrice.Text);
+            car.Hp = int.Parse(txtHP.Text);
+            carsController.UpdateCars(id, car);
+            RefreshTable();
+        }
     }
 }
